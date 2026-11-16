@@ -2,6 +2,7 @@ import { createClient } from "@/utils/supabase/server";
 import { pedir } from "./actions";
 import styles from "./page.module.css";
 export const instant = false;
+import Navbar from "./navbar";
 
 //aqui a gente ta começando com o home pra ser a cara do nosso site
 export default async function Home(){
@@ -12,6 +13,9 @@ export default async function Home(){
 
 //aqui é a parte visual do site
   return(
+  <>
+    <Navbar />
+
     <form action={pedir} className={styles.formPedido}>
       <input type="date" name="data" className={styles.campo}/>
       <select name="id_cardapio" className={styles.campo}>
@@ -41,5 +45,6 @@ export default async function Home(){
 
       <button type="submit" className={styles.botao}>Fazer pedido</button>
     </form>
+  </>
 )}
 
