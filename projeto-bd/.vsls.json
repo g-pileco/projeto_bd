@@ -1,0 +1,6 @@
+{
+  "gitignore": "exclude",
+  "excludeFiles": [
+    "! .env.local"
+  ]
+}

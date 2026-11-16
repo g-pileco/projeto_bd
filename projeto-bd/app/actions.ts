@@ -1,8 +1,7 @@
-"use-server";
+"use server";
 
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/utils/supabase/server";
-import { error } from "console";
 
 export async function pedir(formData: FormData) {
     const supabase = await createClient();
@@ -51,3 +50,5 @@ export async function cadastrar(formData: FormData){
     }
     revalidatePath("/");
 }
+
+
